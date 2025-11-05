@@ -1,0 +1,41 @@
+/* ベース */
+:root{
+  --bg:#ffffff;
+  --fg:#222;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+/* 画像だけのレイアウト */
+.only-hero{
+  min-height:100svh;            /* モバイルの安全な全高 */
+  display:grid;
+  place-items:center;            /* まんなか配置 */
+  padding:clamp(16px,4vw,48px);  /* 端の余白 */
+}
+
+.only-hero figure{
+  margin:0;
+  max-width:min(1000px, 92vw);   /* 画像の最大幅を制御 */
+  width:100%;
+}
+
+.only-hero img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* キャプションを使う場合 */
+.only-hero figcaption{
+  margin-top:12px;
+  text-align:center;
+  font-size:clamp(14px,2.4vw,18px);
+  opacity:.7;
+}
